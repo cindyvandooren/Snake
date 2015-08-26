@@ -32,6 +32,8 @@
     var middle = Math.floor(board.size / 2); //Assumes a square board.
     var start = new Coord(middle, 0); //Snake starts in center of top row.
     this.segments = [start]; //Array of board coordinates
+    this.turning = false;
+    this.growth = 0;
   };
 
   Snake.DIRS = {
@@ -41,24 +43,76 @@
     "W": new Coord(-1, 0)
   };
 
-  Snake.prototype.move = function () {
-    this.segments = _.map(this.segments, function (segment) {
-      return segment.plus(Snake.DIRS[this.dir]);
-    }.bind(this));
 
-    return this.segments;
+  Snake.prototype.head = function () {
+    return this.segments[this.segments.length - 1];
+  };
+
+  Snake.prototype.eatApple = function () {
+    if (this.head().equals(this.board.apple[0])) {
+      this.growth += 3;
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.move = function () {
+    this.segments.push(this.head().plus(Snake.DIRS[this.dir]));
+
+    this.turning = false;
+
+    if (this.eatApple()) {
+      this.board.apple = [this.board.newApple()];
+    }
+
+    if (this.growth > 0) {
+      this.growth -= 1;
+    } else {
+      this.segments.shift();
+    }
+
+    if (!this.isValid()) {
+      this.segments = [];
+    }
+  };
+
+  Snake.prototype.isValid = function () {
+    var head = this.head();
+
+    if (!this.board.validPosition(this.head())) {
+      return false;
+    }
+
+    //Position is invalid if snake hits itself
+    for (var i = 0; i < this.segments.length - 1; i++) {
+      if (this.segments[i].equals(head)) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  Snake.prototype.isOccupying = function (position) {
+    var occupying = false;
+    _.each(this.segments, function (segment) {
+      if (segment.x === position[0] && segment.y === position[1]){
+        occupying = true;
+        return occupying;
+      }
+    });
+    return occupying;
   };
 
   Snake.prototype.turn = function (dir) {
-    this.dir = dir;
-    //Should also check if the new direction is opposite of the old one.
-    //This to avoid the snake to be hitting itself when going the opposite way.
-  };
-
-  Snake.GROWTH_RATE = 3;
-
-  Snake.prototype.grow = function () {
-    //Make the snake grow when it eats an apple
+    if (Snake.DIRS[this.dir].isOpposite(Snake.DIRS[dir]) ||
+      this.turning) {
+      return;
+    } else {
+      this.turning = true;
+      this.dir = dir;
+    }
   };
 
   var Board = Game.Board = function (size) {
@@ -68,8 +122,23 @@
   };
 
   Board.prototype.newApple = function () {
-    var appleX = Math.floor((Math.random() * (this.size + 1)));
-    var appleY = Math.floor((Math.random() * (this.size + 1)));
+    var appleX = Math.floor((Math.random() * this.size));
+    var appleY = Math.floor((Math.random() * this.size));
+
+    while (this.snake.isOccupying([appleX, appleY])) {
+      appleX = Math.floor(Math.random() * this.size);
+      appleY = Math.floor(Math.random() * this.size);
+    }
+
     return new Coord(appleX, appleY);
+  };
+
+  Board.prototype.validPosition = function (coord) {
+    if ((coord.x >= 0) && (coord.x < this.size)) {
+      if((coord.y >= 0) && (coord.y < this.size)) {
+        return true;
+      }
+    }
+    return false;
   };
 })();

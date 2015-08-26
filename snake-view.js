@@ -10,7 +10,7 @@
 
     $(window).keydown(this.keyHandler.bind(this));
 
-    this.snakeInterval = window.setInterval(this.step.bind(this),150);
+    this.snakeInterval = window.setInterval(this.step.bind(this), 150);
   };
 
   View.COMMANDS = {
@@ -24,7 +24,7 @@
     var key = event.keyCode;
 
     if (key in View.COMMANDS) {
-      this.board.snake.dir = View.COMMANDS[key];
+      this.board.snake.turn(View.COMMANDS[key]);
     }
   };
 
@@ -34,8 +34,13 @@
   };
 
   View.prototype.step = function () {
-    this.render();
-    this.board.snake.move();
+    if (this.board.snake.segments.length > 0) {
+      this.board.snake.move();
+      this.render();
+    } else {
+      alert("Game over!");
+      window.clearInterval(this.snakeInterval);
+    }
   };
 
   View.prototype.setupBoard = function () {
