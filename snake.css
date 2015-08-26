@@ -1,0 +1,44 @@
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 40px;
+  font-weight: bold;
+}
+
+ul {
+  position: relative;
+  list-style: none;
+}
+
+ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+li {
+  float: left;
+  width: 20px;
+  height: 20px;
+}
+
+.snake-element {
+  background: green;
+}
+
+.apple {
+  background: red;
+}
+
+figure {
+  border: 12px solid grey;
+  display: inline-block;
+  background-color: black;
+}

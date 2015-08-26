@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Snake Game</title>
+    <link rel="stylesheet" type="text/css" href="./snake.css">
+    <script src="http://underscorejs.org/underscore.js"></script>
+    <script src="./jquery-1.11.3.min.js"></script>
+    <script src="./snake.js"></script>
+    <script src="./snake-view.js"></script>
+  </head>
+
+  <body>
+    <h1>Welcome to snake!</h1>
+    <figure class="snake"></figure>
+    <script>
+      $(function () {
+        new Game.View($(".snake"));
+      });
+    </script>
+  </body>
+</html>
