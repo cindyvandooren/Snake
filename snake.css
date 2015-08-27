@@ -32,18 +32,47 @@ li {
   float: left;
   width: 20px;
   height: 20px;
+  border-radius: 50%;
+}
+
+.score-block {
+  margin-right: 40px;
+  border: 12px solid grey;
+  float: right;
+  width: 250px;
 }
 
 .snake-element {
-  background: green;
+  background: #33CC33;
 }
 
 .apple {
-  background: red;
+  background: url('apple.jpg') no-repeat;
+  background-size: contain;
+}
+
+.game {
+  width: 800px;
+  margin: auto;
+}
+
+.new-game {
+  margin-top: 20px;
+  width: 250px;
 }
 
 figure {
   border: 12px solid grey;
   display: inline-block;
-  background-color: black;
+  background: url('background.jpg') no-repeat;
+  background-size: 160%;
+  float: left;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+figure:after {
+  content: "";
+  display: block;
+  clear: both;
 }

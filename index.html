@@ -10,10 +10,19 @@
 
   <body>
     <h1>Welcome to snake!</h1>
-    <figure class="snake"></figure>
+    <div class="game">
+      <figure class="snake"></figure>
+      <div class="score-block">
+        <h3>Your score</h3>
+        <div class="score"></div>
+        <div class="new-game"><a href="file:///Users/Cindy/Desktop/app_academy/main/w10/snake/index.html">Play again</a></div>
+        <h3>Controls</h3>
+        <div><img src="keys.jpg"></div>
+      </div>
+    </div>
     <script>
       $(function () {
-        new Game.View($(".snake"));
+        new Game.View($("body"));
       });
     </script>
   </body>

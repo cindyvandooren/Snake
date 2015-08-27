@@ -119,6 +119,7 @@
     this.size = size;
     this.snake = new Snake(this);
     this.apple = [this.newApple()];
+    this.score = 0;
   };
 
   Board.prototype.newApple = function () {
@@ -130,6 +131,7 @@
       appleY = Math.floor(Math.random() * this.size);
     }
 
+    this.score += 10;
     return new Coord(appleX, appleY);
   };
 

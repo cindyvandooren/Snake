@@ -5,6 +5,8 @@
 
   var View = Game.View = function (element) {
     this.$el = element;
+    this.$gameEl = this.$el.find(".snake");
+    this.$scoreEl = this.$el.find(".score");
     this.board = new Game.Board(18);
     this.setupBoard();
 
@@ -31,6 +33,7 @@
   View.prototype.render = function () {
     this.changeClasses(this.board.snake.segments, "snake-element");
     this.changeClasses(this.board.apple, "apple");
+    this.$scoreEl.html("<p>"+ this.board.score.toString() + "</p>");
   };
 
   View.prototype.step = function () {
@@ -54,8 +57,8 @@
       htmlBoard += "</ul>";
     }
 
-    this.$el.html(htmlBoard);
-    this.$li = this.$el.find("li");
+    this.$gameEl.html(htmlBoard);
+    this.$li = this.$gameEl.find("li");
   };
 
   View.prototype.changeClasses = function (coords, className) {
@@ -65,7 +68,6 @@
     //its class to snake.
     _.each(coords, function (coord) {
       var listNumber = coord.y * this.board.size + coord.x;
-      console.log(listNumber);
       this.$li.eq(listNumber).addClass(className);
     }.bind(this));
   };
