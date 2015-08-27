@@ -9,10 +9,8 @@
     this.$scoreEl = this.$el.find(".score");
     this.board = new Game.Board(18);
     this.setupBoard();
-
+    this.inPlay = false;
     $(window).keydown(this.keyHandler.bind(this));
-
-    this.snakeInterval = window.setInterval(this.step.bind(this), 150);
   };
 
   View.COMMANDS = {
@@ -27,6 +25,13 @@
 
     if (key in View.COMMANDS) {
       this.board.snake.turn(View.COMMANDS[key]);
+    } else if ((key === 32) && (!this.inPlay)) {
+      console.log("hello");
+      this.snakeInterval = window.setInterval(this.step.bind(this), 150);
+      this.inPlay = true;
+    } else if ((key === 32) && (this.inPlay)) {
+      window.clearInterval(this.snakeInterval);
+      this.inPlay = false;
     }
   };
 
