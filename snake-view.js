@@ -25,8 +25,9 @@
 
     if (key in View.COMMANDS) {
       this.board.snake.turn(View.COMMANDS[key]);
+    } else if (key === 80) {
+      window.location.reload();
     } else if ((key === 32) && (!this.inPlay)) {
-      console.log("hello");
       this.snakeInterval = window.setInterval(this.step.bind(this), 150);
       this.inPlay = true;
     } else if ((key === 32) && (this.inPlay)) {
@@ -46,7 +47,11 @@
       this.board.snake.move();
       this.render();
     } else {
-      alert("Game over!");
+      this.$end = $("body").find(".end-of-game");
+      var scoreText = "<p>Your score is: " + this.board.score.toString() + "</p>";
+      this.$end.find(".end-score").html(scoreText);
+      this.$end.addClass("visible");
+      $("body").addClass("grey");
       window.clearInterval(this.snakeInterval);
     }
   };
@@ -75,5 +80,7 @@
       var listNumber = coord.y * this.board.size + coord.x;
       this.$li.eq(listNumber).addClass(className);
     }.bind(this));
+
+
   };
 })();

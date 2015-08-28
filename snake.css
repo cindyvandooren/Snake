@@ -10,11 +10,25 @@ body {
   font-family: sans-serif;
   text-align: center;
   font-weight: bold;
+  overflow: hidden;
+}
+
+body.grey {
+    background: rgba(92, 88, 88, 0.6);
 }
 
 h1 {
   font-size: 36px;
   margin: 40px;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
 }
 
 ul {
@@ -37,13 +51,20 @@ li {
 
 .score-block {
   margin-right: 40px;
-  border: 12px solid grey;
+  border: 12px solid #545464;
   float: right;
   width: 250px;
+  height: 360px;
+  background: url('background.jpg') no-repeat;
+  background-size: 250%;
 }
 
 .snake-element {
-  background: #33CC33;
+  background: url('snake-skin.jpg');
+}
+
+.snake-element.head {
+  background-color: black;
 }
 
 .apple {
@@ -62,9 +83,9 @@ li {
 }
 
 figure {
-  border: 12px solid grey;
+  border: 12px solid #545464;
   display: inline-block;
-  background: url('background.jpg') no-repeat;
+  background: url('background-snake.jpg') no-repeat;
   background-size: 160%;
   float: left;
   margin-left: 40px;
@@ -75,4 +96,31 @@ figure:after {
   content: "";
   display: block;
   clear: both;
+}
+
+.end-of-game {
+  visibility: hidden;
+}
+
+.end-of-game.visible {
+  background-color: white;
+  width: 100%;
+  height: 180px;
+  visibility: visible;
+  position: absolute;
+  top: 30%;
+}
+
+.end-text {
+  padding: 30px;
+}
+
+.play-again {
+  width: 50px;
+  height: 50px;
+}
+
+.pause-start {
+  height: 50px;
+  width: 70px;
 }
