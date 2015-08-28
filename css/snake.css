@@ -55,12 +55,12 @@ li {
   float: right;
   width: 250px;
   height: 360px;
-  background: url('background.jpg') no-repeat;
+  background: url('../images/background.jpg') no-repeat;
   background-size: 250%;
 }
 
 .snake-element {
-  background: url('snake-skin.jpg');
+  background: url('../images/snake-skin.jpg');
 }
 
 .snake-element.head {
@@ -68,7 +68,7 @@ li {
 }
 
 .apple {
-  background: url('apple.jpg') no-repeat;
+  background: url('../images/apple.jpg') no-repeat;
   background-size: contain;
 }
 
@@ -85,7 +85,7 @@ li {
 figure {
   border: 12px solid #545464;
   display: inline-block;
-  background: url('background-snake.jpg') no-repeat;
+  background: url('../images/background-snake.jpg') no-repeat;
   background-size: 160%;
   float: left;
   margin-left: 40px;
