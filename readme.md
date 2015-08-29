@@ -11,6 +11,7 @@ Classic game built for the browser.
 [screenshot]: ./screenshot.png
 
 ## Features
+- Sounds for end of game and eating of apples
 - Pause and restart functionality
 - Graphics to improve user experience
 
