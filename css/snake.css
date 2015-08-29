@@ -19,11 +19,16 @@ body.grey {
 
 h1 {
   font-size: 36px;
-  margin: 40px;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -47,6 +52,25 @@ li {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+
+.icons > li {
+  margin: 0 20px;
+}
+
+.fa:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.fa {
+  color: black;
+}
+
+.icons {
+  width: 250px;
+  position: relative;
+  margin: 0 auto;
 }
 
 .score-block {

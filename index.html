@@ -8,7 +8,7 @@
       <source src="./sounds/gameover.wav">
     </audio>
     <link rel="stylesheet" type="text/css" href="./css/snake.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
     <script src="http://underscorejs.org/underscore.js"></script>
     <script src="./js/jquery-1.11.3.min.js"></script>
     <script src="./js/score-share.js"></script>
@@ -18,14 +18,23 @@
 
   <body>
     <h1>Welcome to snake!</h1>
+    <div class="credits">
+      <ul class="icons">
+        <li><a href="https://github.com/cindyvandooren"><i class="fa fa-github fa-2x"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/cindyvandooren"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a href="https://cindyvandooren.github.io"><i class="fa fa-home fa-2x"></i></a></li>
+        <li><a href="http://www.spacebook.website"><i class="fa fa-space-shuttle fa-2x"></i></a></li>
+      </ul>
+      <h3>Created by: Cindy Van Dooren</h3>
+    </div>
     <div class="game">
       <figure class="snake"></figure>
       <div class="score-block">
-        <h3>Controls</h3>
+        <h2>Controls</h2>
         <p>Arrows: Move</p>
         <p>Space: Start/Pause</p>
         <p>P: New Game</p>
-        <h3>Your score</h3>
+        <h2>Your score</h2>
         <div class="score"></div>
       </div>
     </div>
@@ -40,14 +49,7 @@
     </div>
 
     <div>
-      <ul>
-        <li><a href="https://github.com/cindyvandooren"><i class="fa fa-github"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/cindyvandooren"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://cindyvandooren.github.io"><i class="fa fa-home"></i></a></li>
-        <li><a href="http://www.spacebook.website"><i class="fa-space-shuttle"></i></a></li>
-      </ul>
-      <p>Created by: Cindy Van Dooren</p>
-      <p>Credits to orginaljun.deviantart.com for sounds</p>
+      <h5>Credits to orginaljun.deviantart.com for sounds</h5>
     </div>
     <script>
       $(function () {
