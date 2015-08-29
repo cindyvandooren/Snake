@@ -25,3 +25,6 @@ Classic game built for the browser.
 - Share score on Facebook
 - Sounds
 - Walls for the snakes to avoid
+
+## Credits
+Sounds: Special thanks to orginaljun.deviantart.com
