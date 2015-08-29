@@ -47,6 +47,7 @@
       this.board.snake.move();
       this.render();
     } else {
+      document.getElementById('gameover').play();
       this.$end = $("body").find(".end-of-game");
       var scoreText = "<p>Your score is: " + this.board.score.toString() + "</p>";
       this.$end.find(".end-score").html(scoreText);
@@ -80,7 +81,5 @@
       var listNumber = coord.y * this.board.size + coord.x;
       this.$li.eq(listNumber).addClass(className);
     }.bind(this));
-
-
   };
 })();

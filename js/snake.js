@@ -51,6 +51,7 @@
   Snake.prototype.eatApple = function () {
     if (this.head().equals(this.board.apple[0])) {
       this.growth += 3;
+      document.getElementById('eatapple').play();
       return true;
     } else {
       return false;
