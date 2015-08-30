@@ -23,7 +23,6 @@ Classic game built for the browser.
 
 ## Todo
 - Share score on Facebook
-- Sounds
 - Walls for the snakes to avoid
 
 ## Credits
