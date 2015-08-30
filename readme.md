@@ -13,7 +13,7 @@ Classic game built for the browser.
 ## Features
 - Sounds for end of game and eating of apples
 - Pause and restart functionality
-- Graphics to improve user experience
+- Graphics to improve UX
 
 ## Technologies
 - Javascript
@@ -23,7 +23,6 @@ Classic game built for the browser.
 
 ## Todo
 - Share score on Facebook
-- Sounds
 - Walls for the snakes to avoid
 
 ## Credits
