@@ -43,7 +43,6 @@
     "W": new Coord(-1, 0)
   };
 
-
   Snake.prototype.head = function () {
     return this.segments[this.segments.length - 1];
   };

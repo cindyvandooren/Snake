@@ -2,7 +2,7 @@
 
 ####[Live][project]
 
-[project]: http://cindyvandooren.github.io/Snake
+[project]: http://www.cindyvandooren.com/Snake
 
 Classic game built for the browser.
 
