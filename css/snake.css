@@ -151,6 +151,14 @@ figure:after {
 }
 
 .game-over {
-  font-size: 36px;
+  font-size: 64px;
   color: #CC0000;
+}
+
+.end-text > p {
+  font-size: 24px;
+}
+
+.end-score > p {
+  font-size: 24px;
 }
