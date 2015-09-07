@@ -34,6 +34,16 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1666592806886865";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
     <h1>Welcome to snake!</h1>
     <div class="credits">
       <ul class="icons">
@@ -60,8 +70,8 @@
       <div class="end-text">
         <p class="game-over">Game Over!</p>
         <p class="end-score"></p>
-        <p>To start a new game: press P</p>
-        <div class="fb-share-button" data-href="http://cindyvandooren.com/Snake/" data-layout="button"></div>
+        <p>Start a new game by pressing P ...</p>
+        <p>or <div class="fb-share-button" data-href="http://cindyvandooren.com/Snake/" data-layout="button"></div> your score on Facebook</p>
       </div>
     </div>
 
