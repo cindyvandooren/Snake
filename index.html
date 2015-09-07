@@ -17,7 +17,30 @@
   </head>
 
   <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1666592806886865',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <h1>Welcome to snake!</h1>
+    <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
     <div class="credits">
       <ul class="icons">
         <li><a href="https://github.com/cindyvandooren"><i class="fa fa-github fa-2x"></i></a></li>
@@ -50,6 +73,7 @@
 
     <div>
       <h5>Credits to orginaljun.deviantart.com for sounds</h5>
+      <div class="fb-share-button" data-href="http://cindyvandooren.com/Snake/" data-layout="button"></div>
     </div>
     <script>
       $(function () {
