@@ -25,14 +25,6 @@
           version    : 'v2.4'
         });
       };
-
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <div id="fb-root"></div>
@@ -71,8 +63,8 @@
         <p class="game-over">Game Over!</p>
         <p class="end-score"></p>
         <p>Start a new game by pressing P or ...</p>
-        <div class="fb-share-button" data-href="http://cindyvandooren.com/Snake/" data-layout="button"></div>
-        <p>your score on Facebook</p>
+        <div class="fb-like" data-href="https://www.cindyvandooren.com/Snake" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+        <p>this game on Facebook!</p>
       </div>
     </div>
 
