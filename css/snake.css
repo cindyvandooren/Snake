@@ -128,8 +128,9 @@ figure:after {
 }
 
 .fb-share-button {
-  width: 150%;
-  height: 150%;
+  transform: scale(2);
+
+  display: block-inline;
 }
 
 .end-of-game.visible {
